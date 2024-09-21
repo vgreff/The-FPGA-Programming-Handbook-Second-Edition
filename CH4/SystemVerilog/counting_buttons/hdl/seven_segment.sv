@@ -46,9 +46,9 @@ module seven_segment
       refresh_count          <= '0;
       anode_count            <= anode_count + 1'b1;
     end else refresh_count <= refresh_count + 1'b1;
-    anode                    <= '1;
-    anode[anode_count]       <= '0;
-    cathode                  <= segments[anode_count];
+    anode                    <= '1;  //set all digit selector high ie 1
+    anode[anode_count]       <= '0;  //set current digit selector to 0 ,active low
+    cathode                  <= segments[anode_count]; // desired copy value 
     if (reset) begin
       refresh_count          <= '0;
       anode_count            <= '0;

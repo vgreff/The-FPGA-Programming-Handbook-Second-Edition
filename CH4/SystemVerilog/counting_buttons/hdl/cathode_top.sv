@@ -16,8 +16,8 @@ module cathode_top
   always_ff @(posedge clk) begin
     cathode[7] <= digit_point;
     case (encoded)
-      4'h0: cathode[6:0] <= 7'b1000000;
-      4'h1: cathode[6:0] <= 7'b1111001;
+      4'h0: cathode[6:0] <= 7'b1000000; // mapping: {G,F,E,D,C,B,A}
+      4'h1: cathode[6:0] <= 7'b1111001; // segment active low
       4'h2: cathode[6:0] <= 7'b0100100;
       4'h3: cathode[6:0] <= 7'b0110000;
       4'h4: cathode[6:0] <= 7'b0011001;
