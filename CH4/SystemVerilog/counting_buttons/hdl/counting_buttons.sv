@@ -80,7 +80,7 @@ module counting_buttons
         end
         if (counter_en) begin
           counter <= counter + 1'b1;
-          if (&counter) begin
+          if (&counter) begin //all the bits in counter are set, ie max value
             counter_en <= '0;
             counter    <= '0;
             button_down <= '1;
